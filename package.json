@@ -1,0 +1,72 @@
+{
+  "name": "@wondercabinet/audio-player",
+  "version": "1.0.0",
+  "description": "A framework-agnostic audio player with waveform visualization, built on Wavesurfer.js",
+  "type": "module",
+  "main": "./dist/wc-audio-player.umd.js",
+  "module": "./dist/wc-audio-player.es.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/wc-audio-player.es.js",
+      "require": "./dist/wc-audio-player.umd.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./themes/default.css": "./dist/themes/default.css",
+    "./themes/minimal.css": "./dist/themes/minimal.css",
+    "./themes/variables.css": "./dist/themes/variables.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "wavesurfer.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.6.0",
+    "vitest": "^1.0.0",
+    "wavesurfer.js": "^7.8.0"
+  },
+  "keywords": [
+    "audio",
+    "player",
+    "waveform",
+    "wavesurfer",
+    "podcast",
+    "episode",
+    "accessible",
+    "keyboard-shortcuts"
+  ],
+  "author": "Wonder Cabinet",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wondercabinet/wc-audio-player.git"
+  },
+  "homepage": "https://github.com/wondercabinet/wc-audio-player#readme",
+  "bugs": {
+    "url": "https://github.com/wondercabinet/wc-audio-player/issues"
+  }
+}

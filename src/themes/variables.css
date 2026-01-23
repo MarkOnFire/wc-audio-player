@@ -1,0 +1,134 @@
+/**
+ * WC Audio Player - CSS Variables
+ *
+ * Design tokens extracted from Wonder Cabinet Ghost theme.
+ * Override these variables to customize the player appearance.
+ *
+ * Usage:
+ *   .my-player {
+ *     --wc-player-wave-color: rgba(0, 0, 38, 0.25);
+ *     --wc-player-progress-color: #10A544;
+ *   }
+ */
+
+:root {
+  /* ===========================================
+     Brand Colors
+     =========================================== */
+  --wc-player-dark-blue: #000026;
+  --wc-player-cream: #FFFAEB;
+  --wc-player-green: #10A544;
+  --wc-player-green-dark: #0d8a38;
+
+  /* ===========================================
+     Waveform Colors
+     =========================================== */
+  --wc-player-wave-color: rgba(0, 0, 38, 0.25);
+  --wc-player-progress-color: #FFFAEB;
+  --wc-player-cursor-color: #000026;
+
+  /* ===========================================
+     Player Container
+     =========================================== */
+  --wc-player-bg: linear-gradient(135deg, #0d8a38 0%, #10A544 100%);
+  --wc-player-text-color: #FFFAEB;
+  --wc-player-border-radius: 16px;
+  --wc-player-padding: 2rem;
+  --wc-player-padding-mobile: 1.5rem;
+
+  /* ===========================================
+     Typography
+     =========================================== */
+  --wc-player-font-family: "Jost", "Futura", system-ui, sans-serif;
+  --wc-player-font-size-sm: 0.8rem;
+  --wc-player-font-size-base: 1rem;
+  --wc-player-font-size-lg: 1.2rem;
+  --wc-player-font-weight-normal: 400;
+  --wc-player-font-weight-medium: 500;
+  --wc-player-font-weight-bold: 700;
+
+  /* ===========================================
+     Waveform Dimensions
+     =========================================== */
+  --wc-player-waveform-height: 64px;
+  --wc-player-waveform-height-mobile: 48px;
+
+  /* ===========================================
+     Play Button
+     =========================================== */
+  --wc-player-play-btn-size: 64px;
+  --wc-player-play-btn-size-mobile: 56px;
+  --wc-player-play-btn-bg: var(--wc-player-dark-blue);
+  --wc-player-play-btn-color: var(--wc-player-cream);
+  --wc-player-play-btn-icon-size: 28px;
+
+  /* ===========================================
+     Control Buttons
+     =========================================== */
+  --wc-player-btn-bg: rgba(255, 250, 235, 0.15);
+  --wc-player-btn-bg-hover: rgba(255, 250, 235, 0.25);
+  --wc-player-btn-border: 1px solid rgba(255, 250, 235, 0.3);
+  --wc-player-btn-size: 44px;
+  --wc-player-btn-radius: 8px;
+  --wc-player-btn-radius-round: 50%;
+
+  /* ===========================================
+     Spacing
+     =========================================== */
+  --wc-player-gap-sm: 0.5rem;
+  --wc-player-gap-md: 1rem;
+  --wc-player-gap-lg: 2rem;
+
+  /* ===========================================
+     Transitions
+     =========================================== */
+  --wc-player-transition-fast: 0.15s ease;
+  --wc-player-transition-normal: 0.2s ease;
+
+  /* ===========================================
+     Focus States
+     =========================================== */
+  --wc-player-focus-ring-color: var(--wc-player-cream);
+  --wc-player-focus-ring-width: 3px;
+  --wc-player-focus-ring-offset: 2px;
+
+  /* ===========================================
+     Shadows
+     =========================================== */
+  --wc-player-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --wc-player-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --wc-player-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+  /* ===========================================
+     Opacity Variants
+     =========================================== */
+  --wc-player-cream-10: rgba(255, 250, 235, 0.1);
+  --wc-player-cream-20: rgba(255, 250, 235, 0.2);
+  --wc-player-cream-25: rgba(255, 250, 235, 0.25);
+  --wc-player-cream-30: rgba(255, 250, 235, 0.3);
+  --wc-player-cream-50: rgba(255, 250, 235, 0.5);
+  --wc-player-cream-70: rgba(255, 250, 235, 0.7);
+  --wc-player-cream-90: rgba(255, 250, 235, 0.9);
+
+  --wc-player-dark-blue-20: rgba(0, 0, 38, 0.2);
+  --wc-player-dark-blue-50: rgba(0, 0, 38, 0.5);
+}
+
+/* ===========================================
+   Dark Mode Support (optional)
+   =========================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode overrides can go here if needed */
+  }
+}
+
+/* ===========================================
+   Reduced Motion
+   =========================================== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --wc-player-transition-fast: 0s;
+    --wc-player-transition-normal: 0s;
+  }
+}

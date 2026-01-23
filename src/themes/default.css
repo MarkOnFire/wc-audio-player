@@ -1,0 +1,437 @@
+/**
+ * WC Audio Player - Default Theme
+ *
+ * The "Wonder Cabinet" theme - green gradient background with cream accents.
+ * Extracted from Wonder Cabinet Ghost theme (Sprint 7 "s7-player" design).
+ *
+ * Usage:
+ *   import '@wondercabinet/audio-player/themes/default.css';
+ *
+ * Or via CDN:
+ *   <link rel="stylesheet" href="https://unpkg.com/@wondercabinet/audio-player/dist/themes/default.css">
+ */
+
+@import './variables.css';
+
+/* ===========================================
+   Player Container
+   =========================================== */
+.wc-audio-player {
+  position: relative;
+  background: var(--wc-player-bg);
+  padding: var(--wc-player-padding);
+  border-radius: var(--wc-player-border-radius);
+  color: var(--wc-player-text-color);
+  font-family: var(--wc-player-font-family);
+}
+
+.wc-audio-player--initialized {
+  /* Applied when player is fully initialized */
+}
+
+/* ===========================================
+   Player Layout
+   =========================================== */
+.wc-player-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wc-player-gap-md);
+}
+
+.wc-player-hero-content {
+  display: flex;
+  gap: var(--wc-player-gap-lg);
+  margin-bottom: var(--wc-player-gap-md);
+}
+
+.wc-player-hero-artwork img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid var(--wc-player-cream);
+  border-radius: var(--wc-player-border-radius);
+  box-shadow: var(--wc-player-shadow-lg);
+}
+
+.wc-player-hero-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wc-player-hero-date {
+  font-size: var(--wc-player-font-size-sm);
+  color: var(--wc-player-cream-70);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.wc-player-hero-title {
+  font-size: 2rem;
+  font-weight: var(--wc-player-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.75rem 0;
+}
+
+.wc-player-hero-desc {
+  font-size: var(--wc-player-font-size-lg);
+  color: var(--wc-player-cream-90);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+/* ===========================================
+   Controls Container
+   =========================================== */
+.wc-player-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--wc-player-gap-md);
+}
+
+.wc-player-hero-actions {
+  display: flex;
+  gap: var(--wc-player-gap-md);
+  align-items: center;
+}
+
+/* ===========================================
+   Play Button
+   =========================================== */
+.wc-player-play-btn {
+  width: var(--wc-player-play-btn-size);
+  height: var(--wc-player-play-btn-size);
+  border-radius: var(--wc-player-btn-radius-round);
+  background: var(--wc-player-play-btn-bg);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--wc-player-transition-normal),
+              box-shadow var(--wc-player-transition-normal);
+  box-shadow: var(--wc-player-shadow-md);
+  flex-shrink: 0;
+  color: var(--wc-player-play-btn-color);
+}
+
+.wc-player-play-btn:hover {
+  transform: scale(1.08);
+  box-shadow: var(--wc-player-shadow-lg);
+}
+
+.wc-player-play-btn:focus-visible {
+  outline: var(--wc-player-focus-ring-width) solid var(--wc-player-focus-ring-color);
+  outline-offset: var(--wc-player-focus-ring-offset);
+}
+
+.wc-player-play-btn svg {
+  width: var(--wc-player-play-btn-icon-size);
+  height: var(--wc-player-play-btn-icon-size);
+  margin-left: 3px; /* Visual centering for play icon */
+}
+
+.wc-player-play-btn.is-playing svg {
+  margin-left: 0;
+}
+
+.wc-player-icon-play,
+.wc-player-icon-pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================================
+   Skip Buttons
+   =========================================== */
+.wc-player-skip {
+  display: flex;
+  align-items: center;
+  gap: var(--wc-player-gap-sm);
+}
+
+.wc-player-skip-btn {
+  width: var(--wc-player-btn-size);
+  height: var(--wc-player-btn-size);
+  border-radius: var(--wc-player-btn-radius-round);
+  background: var(--wc-player-btn-bg);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--wc-player-transition-normal);
+  color: var(--wc-player-text-color);
+}
+
+.wc-player-skip-btn:hover {
+  background: var(--wc-player-btn-bg-hover);
+}
+
+.wc-player-skip-btn:focus-visible {
+  outline: var(--wc-player-focus-ring-width) solid var(--wc-player-focus-ring-color);
+  outline-offset: var(--wc-player-focus-ring-offset);
+}
+
+.wc-player-skip-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===========================================
+   Time Display
+   =========================================== */
+.wc-player-time {
+  font-family: var(--wc-player-font-family);
+  font-size: var(--wc-player-font-size-sm);
+  font-weight: var(--wc-player-font-weight-medium);
+  color: var(--wc-player-cream-70);
+  min-width: 100px;
+  text-align: center;
+}
+
+/* ===========================================
+   Speed Control
+   =========================================== */
+.wc-player-speed {
+  display: flex;
+  align-items: center;
+  gap: var(--wc-player-gap-sm);
+}
+
+.wc-player-speed-btn {
+  padding: 0.5rem 1rem;
+  background: var(--wc-player-btn-bg);
+  border: var(--wc-player-btn-border);
+  border-radius: var(--wc-player-btn-radius);
+  color: var(--wc-player-text-color);
+  font-family: var(--wc-player-font-family);
+  font-size: var(--wc-player-font-size-sm);
+  font-weight: var(--wc-player-font-weight-bold);
+  cursor: pointer;
+  min-width: var(--wc-player-btn-size);
+  min-height: var(--wc-player-btn-size);
+  transition: background-color var(--wc-player-transition-normal);
+}
+
+.wc-player-speed-btn:hover {
+  background: var(--wc-player-btn-bg-hover);
+}
+
+.wc-player-speed-btn:focus-visible {
+  outline: var(--wc-player-focus-ring-width) solid var(--wc-player-focus-ring-color);
+  outline-offset: var(--wc-player-focus-ring-offset);
+}
+
+/* ===========================================
+   Waveform Container
+   =========================================== */
+.wc-player-waveform {
+  flex: 1;
+  height: var(--wc-player-waveform-height);
+  cursor: pointer;
+  background: var(--wc-player-dark-blue-20);
+  border-radius: var(--wc-player-btn-radius);
+  padding: 1rem 1.5rem;
+}
+
+.wc-player-waveform:focus-visible {
+  outline: var(--wc-player-focus-ring-width) solid var(--wc-player-focus-ring-color);
+  outline-offset: var(--wc-player-focus-ring-offset);
+}
+
+#waveform {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===========================================
+   Keyboard Hints
+   =========================================== */
+.wc-player-keyboard-hints {
+  display: flex;
+  gap: var(--wc-player-gap-md);
+  justify-content: center;
+  margin-top: var(--wc-player-gap-md);
+  font-size: 0.75rem;
+  color: var(--wc-player-cream-50);
+}
+
+.wc-player-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.wc-player-hint kbd {
+  display: inline-block;
+  padding: 0.15em 0.4em;
+  font-family: var(--wc-player-font-family);
+  font-size: 0.85em;
+  background: var(--wc-player-cream-10);
+  border: 1px solid var(--wc-player-cream-30);
+  border-radius: 3px;
+}
+
+/* ===========================================
+   Error & Placeholder States
+   =========================================== */
+.wc-player-placeholder,
+.wc-player-error {
+  text-align: center;
+  color: var(--wc-player-cream-70);
+  padding: var(--wc-player-padding);
+}
+
+.wc-player-placeholder svg,
+.wc-player-error svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.4;
+  margin-bottom: 0.5rem;
+}
+
+.wc-player-error-retry {
+  margin-top: 0.5rem;
+}
+
+.wc-player-error-retry button {
+  padding: 0.5rem 1rem;
+  background: var(--wc-player-btn-bg);
+  border: var(--wc-player-btn-border);
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: var(--wc-player-btn-radius);
+}
+
+/* ===========================================
+   Transcript Toggle
+   =========================================== */
+.wc-transcript-section {
+  margin-top: var(--wc-player-gap-lg);
+}
+
+.wc-transcript-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--wc-player-btn-bg);
+  border: var(--wc-player-btn-border);
+  border-radius: var(--wc-player-btn-radius);
+  color: var(--wc-player-text-color);
+  font-family: var(--wc-player-font-family);
+  font-size: var(--wc-player-font-size-base);
+  font-weight: var(--wc-player-font-weight-medium);
+  cursor: pointer;
+  transition: background-color var(--wc-player-transition-normal);
+}
+
+.wc-transcript-toggle:hover {
+  background: var(--wc-player-btn-bg-hover);
+}
+
+.wc-transcript-toggle:focus-visible {
+  outline: var(--wc-player-focus-ring-width) solid var(--wc-player-focus-ring-color);
+  outline-offset: var(--wc-player-focus-ring-offset);
+}
+
+.wc-transcript-toggle-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--wc-player-transition-normal);
+}
+
+.wc-transcript-toggle.is-open .wc-transcript-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.wc-transcript-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--wc-player-transition-normal);
+}
+
+.wc-transcript-content.is-open {
+  max-height: none;
+}
+
+.wc-transcript-inner {
+  padding: var(--wc-player-gap-md);
+  background: var(--wc-player-cream-10);
+  border-radius: 0 0 var(--wc-player-btn-radius) var(--wc-player-btn-radius);
+}
+
+/* ===========================================
+   Screen Reader Only
+   =========================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===========================================
+   Mobile Responsive
+   =========================================== */
+@media (max-width: 767px) {
+  .wc-audio-player {
+    padding: var(--wc-player-padding-mobile);
+  }
+
+  .wc-player-hero-content {
+    flex-direction: column;
+    gap: var(--wc-player-gap-md);
+  }
+
+  .wc-player-hero-artwork img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .wc-player-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .wc-player-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wc-player-hero-actions {
+    flex-wrap: wrap;
+    gap: var(--wc-player-gap-md);
+  }
+
+  .wc-player-play-btn {
+    width: var(--wc-player-play-btn-size-mobile);
+    height: var(--wc-player-play-btn-size-mobile);
+  }
+
+  .wc-player-play-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .wc-player-waveform {
+    height: var(--wc-player-waveform-height-mobile);
+    width: 100%;
+  }
+
+  /* Hide keyboard hints on mobile */
+  .wc-player-keyboard-hints {
+    display: none;
+  }
+}

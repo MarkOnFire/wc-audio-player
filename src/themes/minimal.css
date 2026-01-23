@@ -1,0 +1,240 @@
+/**
+ * WC Audio Player - Minimal Theme
+ *
+ * A bare-bones theme with minimal styling.
+ * Use this as a starting point for custom themes.
+ *
+ * Usage:
+ *   import '@wondercabinet/audio-player/themes/minimal.css';
+ */
+
+@import './variables.css';
+
+/* ===========================================
+   Reset/Base Styles Only
+   =========================================== */
+.wc-audio-player {
+  position: relative;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+/* ===========================================
+   Controls Container
+   =========================================== */
+.wc-player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===========================================
+   Play Button
+   =========================================== */
+.wc-player-play-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #333;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.wc-player-play-btn:hover {
+  background: #555;
+}
+
+.wc-player-play-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.wc-player-play-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.wc-player-icon-play,
+.wc-player-icon-pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================================
+   Skip Buttons
+   =========================================== */
+.wc-player-skip {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.wc-player-skip-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.wc-player-skip-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.wc-player-skip-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===========================================
+   Time Display
+   =========================================== */
+.wc-player-time {
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* ===========================================
+   Speed Control
+   =========================================== */
+.wc-player-speed-btn {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.wc-player-speed-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===========================================
+   Waveform Container
+   =========================================== */
+.wc-player-waveform {
+  flex: 1;
+  height: 64px;
+  cursor: pointer;
+}
+
+#waveform {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===========================================
+   Keyboard Hints
+   =========================================== */
+.wc-player-keyboard-hints {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.wc-player-hint kbd {
+  font-family: monospace;
+  padding: 0.1em 0.3em;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+/* ===========================================
+   Error & Placeholder
+   =========================================== */
+.wc-player-placeholder,
+.wc-player-error {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.6;
+}
+
+/* ===========================================
+   Transcript Toggle
+   =========================================== */
+.wc-transcript-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.wc-transcript-toggle-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+}
+
+.wc-transcript-toggle.is-open .wc-transcript-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.wc-transcript-content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.wc-transcript-content.is-open {
+  max-height: none;
+}
+
+.wc-transcript-inner {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+
+/* ===========================================
+   Screen Reader Only
+   =========================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===========================================
+   Mobile Responsive
+   =========================================== */
+@media (max-width: 767px) {
+  .wc-player-controls {
+    flex-wrap: wrap;
+  }
+
+  .wc-player-waveform {
+    width: 100%;
+    height: 48px;
+  }
+
+  .wc-player-keyboard-hints {
+    display: none;
+  }
+}
